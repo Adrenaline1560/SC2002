@@ -1,5 +1,4 @@
 package lab3;
-import java.util.Arrays;
 public class Plane {
 
 	private int numEmptySeat=12;
@@ -16,7 +15,7 @@ public class Plane {
 		int count=0;
 		for(int i =0;i<seats.length;i++)
 		{
-			if(seats[i]!=null)
+			if(seats[i]!=null && seats[i].isOccupied())
 			{
 					custTemp[count]=seats[i].getCustomerID();
 					count++;
@@ -41,7 +40,7 @@ public class Plane {
 		{
 			for(int j=0;j<seats.length;j++)
 			{
-				if(seats[j]!=null && custTemp[i]==seats[j].getCustomerID())
+				if(seats[j]!=null && custTemp[i]==seats[j].getCustomerID() && seats[j].isOccupied())
 				{
 					temp[count] = seats[j];
 					count++;
@@ -102,7 +101,7 @@ public class Plane {
 		int index =-1;
 		for (int i=0; i < seats.length; i++)
         {
-            if (seats[i] != null && seats[i].getSeatID() == seatId)
+            if (seats[i] != null && seats[i].getSeatID() == seatId && seats[i].isOccupied())
                 index = i;
         }
 		if(index== -1||!seats[index].isOccupied())

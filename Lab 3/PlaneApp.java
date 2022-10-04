@@ -4,7 +4,6 @@ public class PlaneApp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int option;
 		int choice;
 		int seatID;
 		int customerID;
@@ -44,5 +43,6 @@ public class PlaneApp {
 					}
 					
 			}while(choice<7);
+			sc.close();
 	}
 }
